@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
 public class ListarClientes extends javax.swing.JInternalFrame {
  private ControladorCliente controladorCliente;
     /**
-     * Creates new form ListarClientes
+     * Creates new form  ListarClientes
      */
     public ListarClientes(ControladorCliente controladorCliente) {
         initComponents();
