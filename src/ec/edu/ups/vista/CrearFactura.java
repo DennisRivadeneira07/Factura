@@ -325,7 +325,7 @@ public class CrearFactura extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnCrearActionPerformed
 
     private void txtSubtotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSubtotalActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_txtSubtotalActionPerformed
 
     private void txtNumeroFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumeroFacturaActionPerformed
