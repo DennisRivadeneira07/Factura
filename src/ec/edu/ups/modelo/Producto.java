@@ -9,7 +9,7 @@ import java.util.Objects;
 
 /**
  *
- * @author Eduardo Ayora
+ * @author Dennis Rivadeneira
  */
 public class Producto {
     

@@ -11,7 +11,8 @@ import java.util.Set;
 
 /**
  *
- * @author Estudiante
+ * @author Dennis Rivadeneira
+ * 
  */
 public class ControladorCliente {
     

@@ -11,7 +11,7 @@ import java.util.Set;
 
 /**
  *
- * @author Eduardo Ayora
+ * @author Dennis Rivadeneira
  */
 public class ControladorFacturaDetalle {
     

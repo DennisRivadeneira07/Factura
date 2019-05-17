@@ -9,7 +9,8 @@ import java.util.Objects;
 
 /**
  *
- * @author Estudiante
+ * @author Dennis Rivadeneira
+ * 
  */
 public class Cliente {
     

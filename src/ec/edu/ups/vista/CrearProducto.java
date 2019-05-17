@@ -32,9 +32,6 @@ public class CrearProducto extends javax.swing.JInternalFrame {
         txtCodigo.setText(Integer.toString(controladorProducto.getCodigo()));
         
     }
-      
-
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -238,6 +235,8 @@ public class CrearProducto extends javax.swing.JInternalFrame {
         FacturaDetalle facDetalle=new FacturaDetalle();
         
         facDetalle.setNombre(txtNombre.getText());
+        producto.setNombre(txtNombre.getText());
+        producto.setPrecio(Double.parseDouble(txtPrecio.getText()));
         producto.setDetalle(txtDetalle.getText());
         facDetalle.setCantidad((int) Double.parseDouble(txtCantidad.getText()));     
         facDetalle.setPrecio((int) Double.parseDouble(txtPrecio.getText()));        

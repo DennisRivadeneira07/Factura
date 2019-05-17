@@ -87,6 +87,7 @@ public class CrearFactura extends javax.swing.JInternalFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         txtTelefono = new javax.swing.JTextField();
+        txtCodigoGenerar = new javax.swing.JTextField();
 
         setClosable(true);
 
@@ -189,6 +190,12 @@ public class CrearFactura extends javax.swing.JInternalFrame {
             }
         });
 
+        txtCodigoGenerar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCodigoGenerarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -213,10 +220,14 @@ public class CrearFactura extends javax.swing.JInternalFrame {
                                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(30, 30, 30)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(tblListarFac)
-                                    .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(txtTelefono, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
+                                            .addComponent(txtCodigoGenerar))
+                                        .addGap(39, 39, 39)
+                                        .addComponent(tblListarFac))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jlCedulaCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -246,7 +257,7 @@ public class CrearFactura extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNumeroFactura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlCedulaCliente)
                     .addComponent(txtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -259,14 +270,15 @@ public class CrearFactura extends javax.swing.JInternalFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8)
                     .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(tblListarFac))
+                    .addComponent(tblListarFac)
+                    .addComponent(txtCodigoGenerar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47)
@@ -297,9 +309,7 @@ public class CrearFactura extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 29, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -309,6 +319,7 @@ public class CrearFactura extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         Date date = new Date();
         Factura factura = new Factura();
+        Producto producto=new Producto();
         Cliente cliente = controladorCliente.read(Integer.parseInt(txtCedula.getText()));
         factura.setNumeroFactura(Integer.parseInt(txtNumeroFactura.getText()));
         factura.setFecha(date);
@@ -354,12 +365,12 @@ public class CrearFactura extends javax.swing.JInternalFrame {
         txtTelefono.setText(cliente.getTelefono());
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtBuscarActionPerformed
-
     private void tblListarFacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblListarFacActionPerformed
-        ListarProductos listarProducto = new ListarProductos(controladorProducto);
-        listarProducto.setVisible(true);
-        desktopIcon.add(listarProducto);
-
+         int codigo = Integer.parseInt(txtCodigoGenerar.getText());
+         Producto producto = controladorProducto.read(codigo);
+         FacturaDetalle facDetalle=controladorFacturaDetalle.read(codigo);
+         txtSubtotal.setText(Double.toString(producto.getPrecio()));
+       
     }//GEN-LAST:event_tblListarFacActionPerformed
 
     private void txtDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDireccionActionPerformed
@@ -369,6 +380,10 @@ public class CrearFactura extends javax.swing.JInternalFrame {
     private void txtTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTelefonoActionPerformed
+
+    private void txtCodigoGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCodigoGenerarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCodigoGenerarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -388,6 +403,7 @@ public class CrearFactura extends javax.swing.JInternalFrame {
     private javax.swing.JButton tblListarFac;
     private javax.swing.JTable tblListarFactu;
     private javax.swing.JTextField txtCedula;
+    private javax.swing.JTextField txtCodigoGenerar;
     private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtIva;
     private javax.swing.JTextField txtNombre;

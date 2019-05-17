@@ -12,7 +12,8 @@ import java.util.List;
 
 /**
  *
- * @author Eduardo Ayora
+ * @author Dennis Rivadeneira
+ *
  */
 public class Factura {
     

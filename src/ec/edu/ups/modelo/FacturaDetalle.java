@@ -7,7 +7,7 @@ package ec.edu.ups.modelo;
 
 /**
  *
- * @author Eduardo Ayora
+ * @author Dennis Rivadeneira
  */
 public class FacturaDetalle {
     
