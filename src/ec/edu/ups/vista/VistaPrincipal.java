@@ -14,11 +14,11 @@ import java.util.ResourceBundle;
 
 /**
  *
- * @author  Estudiante
+ * @author Dennis Andres Rivadeneira Cabrera
  */
 public class VistaPrincipal extends javax.swing.JFrame {
 
-    private ControladorCliente controladorCliente;
+    private ControladorCliente  controladorCliente;
     private ControladorProducto controladorProducto;
     private ControladorFactura controladorFactura;
     private ControladorFacturaDetalle controladorFacturaDetalle;
