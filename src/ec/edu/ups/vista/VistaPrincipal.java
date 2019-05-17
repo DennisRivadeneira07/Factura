@@ -14,7 +14,7 @@ import java.util.ResourceBundle;
 
 /**
  *
- * @author Estudiante
+ * @author  Estudiante
  */
 public class VistaPrincipal extends javax.swing.JFrame {
 
